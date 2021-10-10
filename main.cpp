@@ -1,12 +1,6 @@
 
 #include "Hash.h"
 
-//–еализовать hashmap(wiki, метод цепочек), использу€ vector и list.
-//	void insert(const std::string& key, int value)
-//	std::pair<int, bool> find(const std::string& key) //bool --- найден или нет, int --- значение
-//	void erase((const std::string& key)				  // удал€ет один экземпл€р записи
-//	operator<< дл€ вывода на экран
-
 int main() {
 	Hashmap<int> a;
 
