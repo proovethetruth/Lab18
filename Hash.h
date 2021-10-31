@@ -72,7 +72,7 @@ public:
 class Iparent_hash : public Hashmap {
 public:
     Iparent_hash() {};
-    virtual int hash(const std::string& str) { return 0; };
+    virtual int hash(const std::string& str) = 0;
 };
 
 class hash1 : public Iparent_hash {

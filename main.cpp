@@ -1,9 +1,7 @@
-
 #include "Hash.h"
 
 int main() {
 	/*Hashmap a;
-
 	std::string b = "Laura Palmer";
 	int number1 = 634;
 	std::string c = "Donna Hayward";
@@ -22,7 +20,6 @@ int main() {
 	int number8 = 164;
 	std::string j = "Sheriff Harry S. Truman";
 	int number9 = 614;
-
 	a.insert(b, number1);
 	a.insert(c, number2);
 	a.insert(d, number3);
@@ -32,9 +29,7 @@ int main() {
 	a.insert(h, number7);
 	a.insert(i, number8);
 	a.insert(j, number9);
-
 	a.erase(b);
-
 	std::cout << a;
 	if ((a.find(b)).second == 0)
 		std::cout << "\n Who murdered Laura Palmer?";
