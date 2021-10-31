@@ -1,12 +1,8 @@
 
 #include "Hash.h"
 
-// Создать отдельлный класс, который должен вычислять хэш-функцию
-// Создать ещё один класс, который по-другому определяет хэш-функцию
-// Класс-родитель, от которого наследуются два класса с хэш-функцией.
-
 int main() {
-	Hashmap<int> a;
+	/*Hashmap a;
 
 	std::string b = "Laura Palmer";
 	int number1 = 634;
@@ -24,7 +20,7 @@ int main() {
 	int number7 = 835;
 	std::string i = "Bobby Briggs";
 	int number8 = 164;
-	std::string j = "Goncharov Alexander";
+	std::string j = "Sheriff Harry S. Truman";
 	int number9 = 614;
 
 	a.insert(b, number1);
@@ -43,12 +39,14 @@ int main() {
 	if ((a.find(b)).second == 0)
 		std::cout << "\n Who murdered Laura Palmer?";
 	else
-		std::cout << "\n Twin Peaks is a very calm, beautiful place";
+		std::cout << "\n Twin Peaks is a very calm, beautiful place";*/
 
-	// ------------ //
-	parent_hash killmenow;
-	Hashmap<int> mapy(killmenow);
-	std::cout << "\n hash = " << map.populpock.hash() << '\n';
+	int number2 = 73;
+	std::string d = "The Log Lady";
 
+	hash2 killmenow;
+	killmenow.insert(d, number2);
+
+	std::cout << "\n hash = " << killmenow.hash("hello") << '\n';
 	return 0;
 }

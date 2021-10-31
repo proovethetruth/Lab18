@@ -7,31 +7,38 @@
 #include <vector>
 #include <utility>
 
-template <class T>
 class Hashmap {
+protected:
+    Hashmap() {
+        keys.resize(max_cap);
+    }
+
 private:
-	std::vector<std::list<std::pair<std::string, int>>> keys;
+    std::vector<std::list<std::pair<std::string, int>>> keys;
+    size_t max_col = 3;
+    size_t max_cap = 100;
 
 public:
-    Hashmap() {
-        keys.resize(100);
-    }
+    virtual int hash(const std::string& str) = 0;
 
-    parent_hash populpock;
-
-    Hashmap(parent_hash peredal) {
-        keys.resize(100);
-        populpock = peredal;
-    }
+    //int hash(const std::string& str)
+    //{
+    //    unsigned long res = 5381;
+    //    int c = 0;
+    //    for (int i = 0; i < str.length(); c = str[i], i++)
+    //        res = ((res << 5) + res) + c + (753817 * str[i]);
+    //
+    //    return abs((int)(res % max_cap));
+    //}
 
     void insert(const std::string& key, int value) {
-        int h = populpock.hash();
+        int h = hash(key);
         keys[h].push_back(std::make_pair(key, value));
-		return;
+        return;
     }
 
     void erase(const std::string& key) {
-        int h = populpock.hash();
+        int h = hash(key);
         for (auto tmp : keys[h]) {
             if (key.compare(tmp.first) == 0) {
                 keys[h].remove(tmp);
@@ -52,7 +59,7 @@ public:
     }
 
     std::pair<int, bool> find(const std::string& key) {
-        int h = populpock.hash();
+        int h = hash(key);
         for (auto tmp : keys[h]) {
             if (key.compare(tmp.first) == 0) {
                 return { tmp.second, true };
@@ -62,23 +69,22 @@ public:
     }
 };
 
-class parent_hash {
+class Iparent_hash : public Hashmap {
 public:
-    parent_hash() {};
-    virtual const int hash() { return 0; }
+    Iparent_hash() {};
+    virtual int hash(const std::string& str) { return 0; };
 };
 
-class hash1 : public parent_hash {
+class hash1 : public Iparent_hash {
 public:
     hash1() {};
-    virtual const int hash() { return 1; }
+    virtual int hash(const std::string& str) { return 1; }
 };
 
-class hash2 : public parent_hash {
+class hash2 : public Iparent_hash {
 public:
     hash2() {};
-    virtual const int hash() { return 2; }
+    virtual int hash(const std::string& str) { return 2; }
 };
-
 
 #endif // !HASH_H
