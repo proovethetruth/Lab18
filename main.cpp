@@ -39,7 +39,7 @@ int main() {
 	int number2 = 73;
 	std::string d = "The Log Lady";
 
-	hash2 killmenow;
+	hash1 killmenow;
 	killmenow.insert(d, number2);
 
 	std::cout << "\n hash = " << killmenow.hash("hello") << '\n';
